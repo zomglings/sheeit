@@ -8,10 +8,14 @@ Always respect .gitignore
 NEVER amend commits. Always create new commits. No exceptions.
 NEVER rebase. Use merge commits to integrate changes.
 
+Build:
+```
+make build
+```
+
 Before committing, run all checks:
 ```
-uv run ruff check
-uv run ruff format --check
-uv run mypy src/
-uv run python -m unittest discover -s tests
+go fmt ./...
+go vet ./...
+go test ./...
 ```
